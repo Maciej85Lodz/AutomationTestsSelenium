@@ -1,18 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
+﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using OpenQA.Selenium.Support;
 
 namespace AutomationFramework.BASE
 {
     public abstract class BasePage
     {
-        public BasePage(IWebDriver driver)
+        public BasePage()
         {
-            PageFactory.InitElements(driver,this);
+            PageFactory.InitElements(DriverContext.Driver, this);
         }
     }
 }
