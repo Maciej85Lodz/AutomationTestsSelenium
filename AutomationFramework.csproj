@@ -53,6 +53,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BASE\Base.cs" />
     <Compile Include="BASE\BasePage.cs" />
     <Compile Include="BASE\BaseStep.cs" />
     <Compile Include="BASE\Browser.cs" />
