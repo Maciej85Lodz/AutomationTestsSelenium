@@ -16,5 +16,7 @@ namespace AutomationFramework.BASE
             get => _driver;
             set => _driver = value;
         }
+
+        public static Browser Browser { get; set; }
     }
 }
