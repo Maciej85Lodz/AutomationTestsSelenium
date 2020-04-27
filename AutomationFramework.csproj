@@ -77,7 +77,7 @@
     <Compile Include="EXTENSIONS\WebDriverExtensions.cs" />
     <Compile Include="HELPERS\DataHelperExtensions.cs" />
     <Compile Include="HELPERS\ExcelHelpers.cs" />
-    <Compile Include="HELPERS\HTMLTableHelpers.cs" />
+    <Compile Include="HELPERS\HtmlTableHelpers.cs" />
     <Compile Include="HELPERS\LogHelpers.cs" />
     <Compile Include="HELPERS\ReportingHelpers.cs" />
     <Compile Include="HELPERS\WebServiceHelpers.cs" />
