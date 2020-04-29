@@ -1,11 +1,7 @@
-﻿using System;
+﻿using OpenQA.Selenium;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.AccessControl;
-using System.Text;
-using System.Threading.Tasks;
-using OpenQA.Selenium;
 
 namespace AutomationFramework.HELPERS
 {
@@ -15,38 +11,39 @@ namespace AutomationFramework.HELPERS
 
         public static void ReadTable(IWebElement table)
         {
-            //Initialize the table
+            //Init the Table
             _tableDatacollections = new List<TableDatacollection>();
 
-            //Get all the columns from the table
+            //Getting all columns from the table
             var columns = table.FindElements(By.TagName("th"));
 
-            //Get all the rows
+            //Getting all rows from the table
             var rows = table.FindElements(By.TagName("tr"));
 
-            //Create row index
+            //Create the row index
             int rowIndex = 0;
             foreach (var row in rows)
             {
+                //Create the column index
                 int colIndex = 0;
 
-                var colDatas = row.FindElements(By.TagName("td"));
-                //Store data only if it has value in row
-                if (colDatas.Count != 0)
-                    foreach (var colValue in colDatas)
+                var colData = row.FindElements(By.TagName("td"));
+
+                //Store data if the row has value
+                if (colData.Count != 0)
+                    foreach (var colValue in colData)
                     {
                         _tableDatacollections.Add(new TableDatacollection
                         {
                             RowNumber = rowIndex,
-                            ColumnName = columns[colIndex].Text != "" ?
-                                         columns[colIndex].Text : colIndex.ToString(),
+                            ColumnName = columns[colIndex].Text != "" ? columns[colIndex].Text : colIndex.ToString(),
                             ColumnValue = colValue.Text,
                             ColumnSpecialValues = GetControl(colValue)
                         });
-
-                        //Move to next column
+                        //Mowing to next column
                         colIndex++;
                     }
+                //Mowing to next row
                 rowIndex++;
             }
         }
@@ -74,9 +71,7 @@ namespace AutomationFramework.HELPERS
 
             return columnSpecialValue;
         }
-
-
-        public static void PerformActionOnCell(string columnIndex, string refColumnName, string refColumnValue, string controlToOperate = null)
+        public static void PerformActionOnCell(string columnIndex, string refColumnName, string refColumnValue, string controlToOperate)
         {
             foreach (int rowNumber in GetDynamicRowNumber(refColumnName, refColumnValue))
             {
@@ -125,11 +120,7 @@ namespace AutomationFramework.HELPERS
                     yield return table.RowNumber;
             }
         }
-
-
     }
-
-
     public class TableDatacollection
     {
         public int RowNumber { get; set; }
@@ -143,5 +134,4 @@ namespace AutomationFramework.HELPERS
         public IEnumerable<IWebElement> ElementCollection { get; set; }
         public string ControlType { get; set; }
     }
-
 }
