@@ -20,30 +20,29 @@ namespace AutomationFramework.HELPERS
             //Getting all rows from the table
             var rows = table.FindElements(By.TagName("tr"));
 
-            //Create the row index
+            //Create row index
             int rowIndex = 0;
             foreach (var row in rows)
             {
-                //Create the column index
                 int colIndex = 0;
 
                 var colData = row.FindElements(By.TagName("td"));
-
-                //Store data if the row has value
+                //Store data only if it has value in row
                 if (colData.Count != 0)
                     foreach (var colValue in colData)
                     {
                         _tableDatacollections.Add(new TableDatacollection
                         {
                             RowNumber = rowIndex,
-                            ColumnName = columns[colIndex].Text != "" ? columns[colIndex].Text : colIndex.ToString(),
+                            ColumnName = columns[colIndex].Text != "" ?
+                                columns[colIndex].Text : colIndex.ToString(),
                             ColumnValue = colValue.Text,
                             ColumnSpecialValues = GetControl(colValue)
                         });
-                        //Mowing to next column
+
+                        //Move to next column
                         colIndex++;
                     }
-                //Mowing to next row
                 rowIndex++;
             }
         }
@@ -71,7 +70,8 @@ namespace AutomationFramework.HELPERS
 
             return columnSpecialValue;
         }
-        public static void PerformActionOnCell(string columnIndex, string refColumnName, string refColumnValue, string controlToOperate)
+
+        public static void PerformActionOnCell(string columnIndex, string refColumnName, string refColumnValue, string controlToOperate = null)
         {
             foreach (int rowNumber in GetDynamicRowNumber(refColumnName, refColumnValue))
             {
@@ -102,7 +102,6 @@ namespace AutomationFramework.HELPERS
                         //ToDo: Currenly only click is supported, future is not taken care here
                         returnedControl?.Click();
                     }
-
                 }
                 else
                 {
@@ -121,6 +120,8 @@ namespace AutomationFramework.HELPERS
             }
         }
     }
+
+
     public class TableDatacollection
     {
         public int RowNumber { get; set; }
