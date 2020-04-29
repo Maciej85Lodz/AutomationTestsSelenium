@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AutomationFramework>
+  <RunSettings>
+    <AUT>http://eaapp.somee.com/</AUT>
+    <AUT2>http://localhost:64429/</AUT2>
+    <!-- Possible flag Chrome, firefox, etc-->
+    <Browser>Chrome</Browser>
+    <TestType>SokeTest</TestType>
+    <!-- Possible Flags Y,N-->
+    <IsLog>Y</IsLog>
+    <LogPath>D:\\PROGRAMOWANIE\\REPOZYTORIA\\AutomationTestSeleniumC#\\AutomationTestsSelenium\\LOGS\\</LogPath>
+    <BuildName>DemoBuild</BuildName>
+    <UserName>CsharpoweZmagania.pl - Team</UserName>
+    <!-- Possible flags Y, N-->
+    <IsReport>N</IsReport>
+    <!-- Possible flags Selenium, Specflow-->
+    <Technology>Selenium</Technology>
+  </RunSettings>
+</AutomationFramework>
