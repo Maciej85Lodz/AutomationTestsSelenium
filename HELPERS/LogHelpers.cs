@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AutomationFramework.CONFIG;
+using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AutomationFramework.HELPERS
 {
@@ -16,7 +13,8 @@ namespace AutomationFramework.HELPERS
         //Create a file which can store the log information
         public static void CreateLogFile()
         {
-            string dir = @"D:\PROGRAMOWANIE\REPOZYTORIA\AutomationTestSeleniumC#\AutomationTestsSelenium\LOGS\";
+            //string dir = @"D:\PROGRAMOWANIE\REPOZYTORIA\AutomationTestSeleniumC#\AutomationTestsSelenium\LOGS\";
+            string dir = Settings.LogPath;
             if (Directory.Exists(dir))
             {
                 _streamer = File.AppendText(dir + _logFileName + ".log");
