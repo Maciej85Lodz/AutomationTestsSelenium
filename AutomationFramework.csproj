@@ -71,7 +71,7 @@
     <Compile Include="BASE\BaseStep.cs" />
     <Compile Include="BASE\Browser.cs" />
     <Compile Include="BASE\DriverContext.cs" />
-    <Compile Include="BASE\TestInitialiyeHook.cs" />
+    <Compile Include="BASE\TestInitializeHook.cs" />
     <Compile Include="CONFIG\ConfigReader.cs" />
     <Compile Include="CONFIG\Settings.cs" />
     <Compile Include="EXTENSIONS\WebElementExtensions.cs" />

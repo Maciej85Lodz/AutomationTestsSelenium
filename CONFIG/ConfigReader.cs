@@ -22,7 +22,7 @@ namespace AutomationFramework.CONFIG
             XPathNavigator navigator = document.CreateNavigator();
 
             //Get XML Details and pass it in XPathItem type variables
-            aut = navigator.SelectSingleNode("AutomationFramework/RunSettings/AUT"); // AUT => webApplication; AUT2 => localhost;
+            aut = navigator.SelectSingleNode("AutomationFramework/RunSettings/AUT2"); // AUT => webApplication; AUT2 => localhost;
             testType = navigator.SelectSingleNode("AutomationFramework/RunSettings/TestType");
             isLog = navigator.SelectSingleNode("AutomationFramework/RunSettings/IsLog");
             isReport = navigator.SelectSingleNode("AutomationFramework/RunSettings/IsReport");

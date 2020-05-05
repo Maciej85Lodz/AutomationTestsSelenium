@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutomationFramework.BASE;
+﻿using AutomationFramework.BASE;
 using AutomationFramework.HELPERS;
 using OpenQA.Selenium;
+using System;
+using System.Diagnostics;
 
 namespace AutomationFramework.EXTENSIONS
 {
