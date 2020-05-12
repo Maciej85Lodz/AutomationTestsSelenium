@@ -7,7 +7,7 @@ namespace AutomationFramework.HELPERS
     public static class DataHelperExtensions
     {
         //Open the connection 
-        public static SqlConnection DBConect(this SqlConnection sqlConnection, string connectionString)
+        public static SqlConnection DBConnect(this SqlConnection sqlConnection, string connectionString)
         {
             try
             {

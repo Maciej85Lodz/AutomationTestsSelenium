@@ -14,7 +14,7 @@ namespace AutomationFramework.CONFIG
             XPathItem isReport;
             XPathItem buildName;
             XPathItem logPath;
-
+            XPathItem appConnection;
 
             string strFileName = Environment.CurrentDirectory.ToString() + "\\Config\\GlobalConfig.xml";
             FileStream stream = new FileStream(strFileName,FileMode.Open);
@@ -28,6 +28,7 @@ namespace AutomationFramework.CONFIG
             isReport = navigator.SelectSingleNode("AutomationFramework/RunSettings/IsReport");
             buildName = navigator.SelectSingleNode("AutomationFramework/RunSettings/BuildName");
             logPath = navigator.SelectSingleNode("AutomationFramework/RunSettings/LogPath");
+            appConnection = navigator.SelectSingleNode("AutomationFramework/RunSettings/ApplicationDb");
 
             //Set XML Details in the property to be used accross framework
             Settings.AUT = aut.Value;
@@ -36,7 +37,7 @@ namespace AutomationFramework.CONFIG
             Settings.IsReporting = isReport.Value.ToString();
             Settings.BuildName = buildName.Value.ToString();
             Settings.LogPath = logPath.Value.ToString();
-
+            Settings.AppConnectionString = appConnection.Value.ToString();
         }
     }
 }

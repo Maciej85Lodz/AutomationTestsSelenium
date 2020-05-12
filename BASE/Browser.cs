@@ -15,17 +15,19 @@ namespace AutomationFramework.BASE
         {
             _driver = driver;
         }
+
         public BrowserType Type { get; set; }
 
         public void GoToUrl(string url)
         {
             DriverContext.Driver.Url = url;
         }
+
     }
 
     public enum BrowserType
     {
-        Chrome,
-        FireFox
+        FireFox,
+        Chrome
     }
 }
