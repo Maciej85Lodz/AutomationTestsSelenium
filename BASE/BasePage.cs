@@ -10,5 +10,7 @@ namespace AutomationFramework.BASE
         {
             PageFactory.InitElements(DriverContext.Driver, this);
         }
+
     }
 }
+

@@ -11,13 +11,13 @@ namespace AutomationFramework.HELPERS
 
         public static void ReadTable(IWebElement table)
         {
-            //Init the Table
+            //Initialize the table
             _tableDatacollections = new List<TableDatacollection>();
 
-            //Getting all columns from the table
+            //Get all the columns from the table
             var columns = table.FindElements(By.TagName("th"));
 
-            //Getting all rows from the table
+            //Get all the rows
             var rows = table.FindElements(By.TagName("tr"));
 
             //Create row index
@@ -26,16 +26,16 @@ namespace AutomationFramework.HELPERS
             {
                 int colIndex = 0;
 
-                var colData = row.FindElements(By.TagName("td"));
+                var colDatas = row.FindElements(By.TagName("td"));
                 //Store data only if it has value in row
-                if (colData.Count != 0)
-                    foreach (var colValue in colData)
+                if (colDatas.Count != 0)
+                    foreach (var colValue in colDatas)
                     {
                         _tableDatacollections.Add(new TableDatacollection
                         {
                             RowNumber = rowIndex,
                             ColumnName = columns[colIndex].Text != "" ?
-                                columns[colIndex].Text : colIndex.ToString(),
+                                         columns[colIndex].Text : colIndex.ToString(),
                             ColumnValue = colValue.Text,
                             ColumnSpecialValues = GetControl(colValue)
                         });
@@ -71,6 +71,7 @@ namespace AutomationFramework.HELPERS
             return columnSpecialValue;
         }
 
+
         public static void PerformActionOnCell(string columnIndex, string refColumnName, string refColumnValue, string controlToOperate = null)
         {
             foreach (int rowNumber in GetDynamicRowNumber(refColumnName, refColumnValue))
@@ -102,6 +103,7 @@ namespace AutomationFramework.HELPERS
                         //ToDo: Currenly only click is supported, future is not taken care here
                         returnedControl?.Click();
                     }
+
                 }
                 else
                 {
@@ -119,6 +121,8 @@ namespace AutomationFramework.HELPERS
                     yield return table.RowNumber;
             }
         }
+
+
     }
 
 
@@ -135,4 +139,5 @@ namespace AutomationFramework.HELPERS
         public IEnumerable<IWebElement> ElementCollection { get; set; }
         public string ControlType { get; set; }
     }
+
 }

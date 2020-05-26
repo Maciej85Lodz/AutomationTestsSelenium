@@ -5,7 +5,7 @@
     <AUT2>http://localhost:64429/</AUT2>
     <!-- Possible flag Chrome, firefox, etc-->
     <Browser>Chrome</Browser>
-    <TestType>SokeTest</TestType>
+    <TestType>SmokeTest</TestType>
     <!-- Possible Flags Y,N-->
     <IsLog>Y</IsLog>
     <LogPath>D:\\PROGRAMOWANIE\\REPOZYTORIA\\AutomationTestSeleniumC#\\AutomationTestsSelenium\\LOGS\\</LogPath>
@@ -15,5 +15,6 @@
     <IsReport>N</IsReport>
     <!-- Possible flags Selenium, Specflow-->
     <Technology>Selenium</Technology>
+    <ApplicationDb>Data Source=MWO-ACER-EZG-01;initial catalog=EmployeeDB;integrated security=True"</ApplicationDb>
   </RunSettings>
 </AutomationFramework>

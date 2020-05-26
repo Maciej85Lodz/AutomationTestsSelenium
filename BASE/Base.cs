@@ -1,12 +1,24 @@
 ﻿using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using TechTalk.SpecFlow;
 
 namespace AutomationFramework.BASE
 {
     public class Base
     {
+        public BasePage CurrentPage
+        {
+            get
+            {
+                return (BasePage)ScenarioContext.Current["currentPage"];
+            }
+            set
+            {
+                ScenarioContext.Current["currentPage"] = value;
+            }
+        }
+
         private IWebDriver _driver { get; set; }
-        public BasePage CurrentPage { get; set; }
 
         protected TPage GetInstance<TPage>() where TPage : BasePage, new()
         {
@@ -24,6 +36,6 @@ namespace AutomationFramework.BASE
         {
             return (TPage)this;
         }
-
     }
 }
+
