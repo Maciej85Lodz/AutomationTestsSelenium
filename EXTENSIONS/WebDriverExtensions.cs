@@ -44,7 +44,7 @@ namespace AutomationFramework.EXTENSIONS
 
         internal static object ExecuteJs(this IWebDriver driver, string script)
         {
-            return ((IJavaScriptExecutor) DriverContext.Driver).ExecuteScript(script);
+            return ((IJavaScriptExecutor)DriverContext.Driver).ExecuteScript(script);
         }
     }
 }

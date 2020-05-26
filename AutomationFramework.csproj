@@ -84,6 +84,9 @@
     <Reference Include="NuGet.Frameworks, Version=5.0.0.6, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>packages\NuGet.Frameworks.5.0.0\lib\net472\NuGet.Frameworks.dll</HintPath>
     </Reference>
+    <Reference Include="nunit.framework, Version=2.7.1.0, Culture=neutral, PublicKeyToken=2638cd05610744eb, processorArchitecture=MSIL">
+      <HintPath>packages\NUnit.2.7.1\lib\nunit.framework.dll</HintPath>
+    </Reference>
     <Reference Include="SeleniumExtras.PageObjects, Version=3.11.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>packages\DotNetSeleniumExtras.PageObjects.3.11.0\lib\net45\SeleniumExtras.PageObjects.dll</HintPath>
     </Reference>
@@ -174,6 +177,9 @@
     <Compile Include="BASE\Browser.cs" />
     <Compile Include="BASE\DriverContext.cs" />
     <Compile Include="BASE\TestInitializeHook.cs" />
+    <Compile Include="ConfigElement\EAFrameworkElement.cs" />
+    <Compile Include="ConfigElement\EAFrameworkElementCollection.cs" />
+    <Compile Include="ConfigElement\EATestConfiguration.cs" />
     <Compile Include="CONFIG\ConfigReader.cs" />
     <Compile Include="CONFIG\Settings.cs" />
     <Compile Include="EXTENSIONS\WebElementExtensions.cs" />
