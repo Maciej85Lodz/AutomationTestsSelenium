@@ -50,16 +50,16 @@ namespace AutomationFramework.HELPERS
         private static ColumnSpecialValue GetControl(IWebElement columnValue)
         {
             ColumnSpecialValue columnSpecialValue = null;
-            //Check if the control has specific tags like input/hyperlink etc
-            if (columnValue.FindElements(By.TagName("a href")).Count >= 1)
+            //Check if the control has specfic tags like input/hyperlink etc
+            if (columnValue.FindElements(By.TagName("a")).Count > 0)
             {
                 columnSpecialValue = new ColumnSpecialValue
                 {
-                    ElementCollection = columnValue.FindElements(By.TagName("a href")),
+                    ElementCollection = columnValue.FindElements(By.TagName("a")),
                     ControlType = "hyperLink"
                 };
             }
-            if (columnValue.FindElements(By.TagName("input")).Count >= 0)
+            if (columnValue.FindElements(By.TagName("input")).Count > 0)
             {
                 columnSpecialValue = new ColumnSpecialValue
                 {

@@ -15,9 +15,10 @@ namespace AutomationFramework.BASE
             Browser = browser;
         }
 
+
         public void InitializeSettings()
         {
-            //Set all settings for Framework
+            //Set all the settings for framework
             ConfigReader.SetFrameworkSettings();
 
             //Set Log
@@ -26,33 +27,34 @@ namespace AutomationFramework.BASE
             //Open Browser
             OpenBrowser(Browser);
 
-            LogHelpers.Write("The Framework has been initialized");
+            LogHelpers.Write("Initialized framework");
+
         }
 
-        private void OpenBrowser(BrowserType browserType)
+        private void OpenBrowser(BrowserType browserType = BrowserType.Chrome)
         {
             switch (browserType)
             {
-                case
-                    BrowserType.Chrome:
-                    DriverContext.Driver = new ChromeDriver();
-                    DriverContext.Browser = new Browser(DriverContext.Driver);
-                    break;
-                case
-                    BrowserType.FireFox:
+                case BrowserType.FireFox:
                     DriverContext.Driver = new FirefoxDriver();
                     DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
-                default:
+                case BrowserType.Chrome:
+                    DriverContext.Driver = new ChromeDriver();
+                    DriverContext.Browser = new Browser(DriverContext.Driver);
                     break;
             }
+
         }
 
         public virtual void NavigateSite()
         {
             DriverContext.Browser.GoToUrl(Settings.AUT);
-            LogHelpers.Write("The Browser has been opened!");
+            LogHelpers.Write("Opened the browser !!!");
         }
+
+
+
     }
 }
 

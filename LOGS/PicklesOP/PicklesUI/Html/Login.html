@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"[]>
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/master.css" type="text/css" />
+    <link rel="stylesheet" href="css/print.css" type="text/css" media="print" />
+    <script src="js/jquery.js" type="text/javascript"></script>
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script type="text/javascript">
+$(document).ready(function() {
+  initializeToc();
+});
+</script>
+    <!-- We are using Font Awesome - http://fortawesome.github.com/Font-Awesome - licensed under CC BY 3.0 -->
+  </head>
+  <body>
+    <div id="container">
+      <div id="top" />
+      <div id="toc">
+        <p class="tocCollapser" title="Collapse Table of Content">«</p>
+        <ul class="features">
+          <li class="file" id="root">
+            <a href="index.html">Home</a>
+          </li>
+          <li class="file">
+            <a href="Employee.html">Employee</a>
+            <span class="float-right">
+              <i class="icon-warning-sign inconclusive" title="Inconclusive with Employee Test App From Pickles UI version 1.0"> </i>
+            </span>
+          </li>
+          <li class="file">
+            <span class="current">Login</span>
+            <span class="float-right">
+              <i class="icon-warning-sign inconclusive" title="Inconclusive with Employee Test App From Pickles UI version 1.0"> </i>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div id="feature">
+        <div class="float-right">
+          <i class="icon-warning-sign inconclusive" title="Inconclusive with Employee Test App From Pickles UI version 1.0"> </i>
+        </div>
+        <h1>Login</h1>
+        <div class="description">
+          <p>Check if the login functionality is working
+as expected with different permutations and 
+combinations of data</p>
+        </div>
+        <ul id="scenarios">
+          <li class="scenario">
+            <div class="float-right">
+              <i class="icon-warning-sign inconclusive" title="Inconclusive with Employee Test App From Pickles UI version 1.0"> </i>
+            </div>
+            <div class="scenario-heading">
+              <h2></h2>
+            </div>
+            <div class="steps">
+              <ul />
+            </div>
+          </li>
+          <li class="scenario">
+            <div class="float-right">
+              <i class="icon-warning-sign inconclusive" title="Inconclusive with Employee Test App From Pickles UI version 1.0"> </i>
+            </div>
+            <div class="scenario-heading" id="check-login-with-correct-username-and-password">
+              <p class="tags">Tags: <span>@positive</span>, <span>@smoke</span></p>
+              <h2>Check Login with correct username and password</h2>
+            </div>
+            <div class="steps">
+              <ul>
+                <li class="step">
+                  <span class="keyword">Given </span>I have navigated to the application</li>
+                <li class="step">
+                  <span class="keyword">And </span>I see application opened</li>
+                <li class="step">
+                  <span class="keyword">Then </span>I click login link</li>
+                <li class="step">
+                  <span class="keyword">When </span>I enter UserName and Password<div class="table_container"><table class="datatable"><thead><tr><th>UserName</th><th>Password</th><th> </th></tr></thead><tbody><tr><td>admin</td><td>password</td></tr></tbody></table></div></li>
+                <li class="step">
+                  <span class="keyword">Then </span>I click login button</li>
+                <li class="step">
+                  <span class="keyword">Then </span>I should see the username with hello</li>
+              </ul>
+            </div>
+            <a class="scenario-link" href="javascript:showImageLink('check-login-with-correct-username-and-password')" title="Copy scenario link to clipboard.">
+              <i class="icon-link"> </i>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="footer">
+        <p>Test results generated for: Employee Test App From Pickles UI, version 1.0</p>
+        <p>Generated on: 12 maja 2020 15:32:57</p>
+        <p>Produced by Pickles, version 2.20.1.0</p>
+      </div>
+    </div>
+  </body>
+</html>
